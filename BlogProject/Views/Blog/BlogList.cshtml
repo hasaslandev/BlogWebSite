@@ -1,0 +1,66 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Blog>
+<section id="portfolio" class="portfolio section-bg">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Bloglar</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+            <div class="row" data-aos="fade-up">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <ul id="portfolio-flters">
+                        
+                        <li data-filter="*" class="filter-active">All</li>
+                        @foreach (var item in Model)
+                        {
+                            var sonuc = item.Category.CategoryName;
+                            <li data-filter=".filter-@sonuc">@sonuc</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-@item.Category.CategoryName">
+                        <div class="portfolio-wrap">
+                            <div>
+                                <h4>@item.BlogTitle</h4>
+                                    <p>@(((DateTime)item.BlogDate).ToString("dd-MMM-yyyy"))</p>
+                                    <p><img height="30" width="30" src="@item.Author.AuthorImage" /> @item.Author.AuthorName</p>
+                                    <img style="height:350px" src=@item.BlogImage class="img-fluid" alt="" >
+                                <div class="portfolio-links">
+                                    <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                    @*<div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-wrap">
+                    <img src="~/iPortfolio/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-links">
+                        <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-wrap">
+                    <img src="~/iPortfolio/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-links">
+                        <a href="~/iPortfolio/assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
+                        <a href="~/iPortfolio/portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+            </div>*@
+
+
+                </div>
+            
+    </div>
+</section>

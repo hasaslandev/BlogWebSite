@@ -12,9 +12,9 @@ namespace EntityLayer.Concrete
         [Key]
         public int BlogID { get; set; }
         [StringLength(100)]
-        public int BlogTitle { get; set; }
+        public string BlogTitle { get; set; }
         [StringLength(100)]
-        public int BlogImage { get; set; }
+        public string BlogImage { get; set; }
         public DateTime BlogDate { get; set; }
         public string BlogContent { get; set; }
         public int CategoryID { get; set; }
