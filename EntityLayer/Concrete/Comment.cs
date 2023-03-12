@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace EntityLayer.Concrete
 {
@@ -14,6 +15,7 @@ namespace EntityLayer.Concrete
         public string Mail { get; set; }
         [StringLength(500)]
         public string CommentText { get; set; }
+        public DateTime  CommentDate { get; set; }
 
         public int BlogID { get; set; }
         public virtual Blog Blogs { get; set; }

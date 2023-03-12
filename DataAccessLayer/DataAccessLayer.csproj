@@ -61,10 +61,32 @@
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repository.cs" />
+    <Compile Include="Migrations\202303101905392_mig1.cs" />
+    <Compile Include="Migrations\202303101905392_mig1.designer.cs">
+      <DependentUpon>202303101905392_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303110753503_mig2.cs" />
+    <Compile Include="Migrations\202303110753503_mig2.designer.cs">
+      <DependentUpon>202303110753503_mig2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303111931151_mig7.cs" />
+    <Compile Include="Migrations\202303111931151_mig7.designer.cs">
+      <DependentUpon>202303111931151_mig7.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202303101905392_mig1.resx">
+      <DependentUpon>202303101905392_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303110753503_mig2.resx">
+      <DependentUpon>202303110753503_mig2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303111931151_mig7.resx">
+      <DependentUpon>202303111931151_mig7.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
       <Project>{1ceefbad-b9e4-46a4-834d-beaf6faab767}</Project>

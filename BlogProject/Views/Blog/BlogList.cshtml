@@ -1,4 +1,7 @@
-﻿@model IEnumerable<EntityLayer.Concrete.Blog>
+﻿@using PagedList
+@using PagedList.Mvc
+
+@model IEnumerable<EntityLayer.Concrete.Blog>
 <section id="portfolio" class="portfolio section-bg">
     <div class="container">
 
@@ -31,8 +34,8 @@
                                     <p><img height="30" width="30" src="@item.Author.AuthorImage" /> @item.Author.AuthorName</p>
                                     <img style="height:350px" src=@item.BlogImage class="img-fluid" alt="" >
                                 <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                    <a href="assets/img@ViewBag.postimage2/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                                    <a href="/Blog/BlogDetails/@item.BlogID" title="More Details"><i class="bx bx-link"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -64,3 +67,4 @@
             
     </div>
 </section>
+@Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new { page }))
