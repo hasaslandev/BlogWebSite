@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace BlogProject.Controllers
 {
+
     public class BlogController : Controller
     {
         BlogManager bm = new BlogManager();
@@ -88,6 +89,11 @@ namespace BlogProject.Controllers
         {
             var bloglist = bm.GetAll();
             return View(bloglist);
+        }
+        public ActionResult AdminBlogList2()
+        {
+            var bloglist2 = bm.GetAll();
+            return View(bloglist2);
         }
         [HttpGet]
         public ActionResult AddNewBlog()

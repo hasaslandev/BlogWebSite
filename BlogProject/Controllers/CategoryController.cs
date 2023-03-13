@@ -21,5 +21,10 @@ namespace BlogProject.Controllers
             var Cvalues = categoryManager.GetAll();
             return PartialView(Cvalues);
         }
+        public ActionResult AdminCategoryList()
+        {
+            var categorylist = categoryManager.GetAll().Distinct();
+            return View(categorylist);
+        }
     }
 }
