@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,11 @@ namespace BlogProject.Controllers
     public class AdminInformationController : Controller
     {
         // GET: Adminİnformation
+        AdminManager am = new AdminManager();
         public PartialViewResult Index()
         {
-            return PartialView();
+            var adminvalues = am.GetAll();
+            return PartialView(adminvalues);
         }
     }
 }
