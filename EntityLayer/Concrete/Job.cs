@@ -13,6 +13,7 @@ namespace EntityLayer.Concrete
         public int JobID { get; set; }
         [StringLength(20)]
         public string JobName { get; set; }
-        public ICollection<Admin> Admins { get; set; }
+        public int AdminID { get; set; }
+        public virtual Admin Admin { get; set; }
     }
 }

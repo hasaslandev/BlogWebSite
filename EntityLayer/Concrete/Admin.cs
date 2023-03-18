@@ -25,12 +25,13 @@ namespace EntityLayer.Concrete
         public string City { get; set; }
         [StringLength(11)]
         public string Phone { get; set; }
-        public int ResumeID { get; set; }
-        public virtual Resume Resume { get; set; }
-        public int JobID { get; set; }
-        public virtual Job Job { get; set; }
-        public int SkillID { get; set; }
-        public virtual Skill Skill { get; set; }
+
+        public ICollection<Resume> Resumes { get; set; }
+
+        public ICollection<Job> Jobs { get; set; }
+
+        public ICollection<Skill> Skills { get; set; }
+
 
     }
 }

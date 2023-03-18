@@ -15,7 +15,9 @@ namespace EntityLayer.Concrete
         public string ResumeJobs { get; set; }
         [StringLength(2000)]
         public string ResumeStatement { get; set; }
-        public ICollection<Admin> Admins { get; set; }
+        public int AdminID { get; set; }
+        public virtual Admin Admin { get;set; }
+
 
     }
 }

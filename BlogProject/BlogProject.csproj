@@ -2683,7 +2683,11 @@
     <Content Include="Views\Contact\MessageDetails.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\AdminInformation\Index.cshtml" />
+    <Content Include="Views\AdminInformation\About.cshtml" />
+    <Content Include="Views\AdminInformation\Facts.cshtml" />
+    <Content Include="Views\AdminInformation\Skills.cshtml" />
+    <Content Include="Views\AdminInformation\Resume.cshtml" />
+    <Content Include="Views\AdminInformation\Services.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
