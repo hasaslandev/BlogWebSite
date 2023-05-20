@@ -9,7 +9,7 @@ namespace BlogProject.Controllers
 
     public class LoginController : Controller
     {
-        [Authorize]
+
         // GET: Login
         [HttpGet]
         public ActionResult Index()

@@ -29,11 +29,6 @@ namespace BusinessLayer.Concrete
         }
         public int BlogAddBL(Blog p)
         {
-            //if (p.BlogTitle ==""|| p.BlogImage==""|| 
-            //    p.BlogTitle.Length<=5 ||p.BlogContent.Length<=200)
-            //{
-            //    return -1;
-            //}
             return repoblog.Insert(p);
         }
         public int DeleteBlogBL(int p)
@@ -56,5 +51,6 @@ namespace BusinessLayer.Concrete
             blog.AuthorID = p.AuthorID;
             return repoblog.Update(blog);
         }
+
     }
 }

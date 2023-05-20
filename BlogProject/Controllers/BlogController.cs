@@ -22,7 +22,7 @@ namespace BlogProject.Controllers
         }
         public PartialViewResult BlogList(int page = 1)
         {
-            var bloglist = bm.GetAll().ToPagedList(page,5);
+            var bloglist = bm.GetAll().ToPagedList(page,8);
             return PartialView(bloglist);
         }
         public PartialViewResult FeaturedPosts()

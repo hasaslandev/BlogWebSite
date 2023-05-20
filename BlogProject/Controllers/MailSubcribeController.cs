@@ -10,6 +10,7 @@ namespace BlogProject.Controllers
 {
     public class MailSubcribeController : Controller
     {
+        SubscribeMailManager subscribeMailManager = new SubscribeMailManager();
         // GET: MailSubcribe
         [HttpGet]
         public PartialViewResult AddMail()
@@ -19,7 +20,6 @@ namespace BlogProject.Controllers
         [HttpPost]
         public PartialViewResult AddMail(SubscribeMail subscribeMail)
         {
-            SubscribeMailManager subscribeMailManager =new  SubscribeMailManager();
             subscribeMailManager.BLAdd(subscribeMail);
             return PartialView();
         }

@@ -15,5 +15,6 @@ namespace BusinessLayer.Concrete
         {
             return repocategory.List();
         }
-    }
+
+	}
 }

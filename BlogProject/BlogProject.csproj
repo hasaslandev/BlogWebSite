@@ -1996,6 +1996,7 @@
     <Content Include="iPortfolio\assets\css\style.css" />
     <Content Include="iPortfolio\assets\img\apple-touch-icon.png" />
     <Content Include="iPortfolio\assets\img\favicon.png" />
+    <Content Include="iPortfolio\assets\img\HasanPhotoWeb.jpg" />
     <Content Include="iPortfolio\assets\img\hero-bg.jpg" />
     <Content Include="iPortfolio\assets\img\portfolio\portfolio-1.jpg" />
     <Content Include="iPortfolio\assets\img\portfolio\portfolio-2.jpg" />

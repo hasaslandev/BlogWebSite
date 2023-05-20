@@ -60,6 +60,7 @@
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IResumeDal.cs" />
+    <Compile Include="Abstract\ISkillDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repository.cs" />
     <Compile Include="Migrations\202303101905392_mig1.cs" />
@@ -110,6 +111,10 @@
     <Compile Include="Migrations\202303140904517_mig15.designer.cs">
       <DependentUpon>202303140904517_mig15.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303181618588_mig16.cs" />
+    <Compile Include="Migrations\202303181618588_mig16.designer.cs">
+      <DependentUpon>202303181618588_mig16.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -150,6 +155,9 @@
     <EmbeddedResource Include="Migrations\202303140904517_mig15.resx">
       <DependentUpon>202303140904517_mig15.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303181618588_mig16.resx">
+      <DependentUpon>202303181618588_mig16.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
@@ -160,6 +168,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
