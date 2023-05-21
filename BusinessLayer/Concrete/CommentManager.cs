@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-   public class CommentManager
+   public class CommentManager:ICommentService
     {
         Repository<Comment> repocomment = new Repository<Comment>();
         public List<Comment> CommentList()
@@ -48,6 +49,5 @@ namespace BusinessLayer.Concrete
             comment.CommentStatus = true;
             return repocomment.Update(comment);
         }
-
-    }
+	}
 }

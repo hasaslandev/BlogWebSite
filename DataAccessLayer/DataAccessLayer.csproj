@@ -53,15 +53,23 @@
   <ItemGroup>
     <Compile Include="Abstract\IAboutDal.cs" />
     <Compile Include="Abstract\IAdminDal.cs" />
-    <Compile Include="Abstract\IAuthorDaı.cs" />
+    <Compile Include="Abstract\IAuthorDal.cs" />
     <Compile Include="Abstract\IBlogDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\ICommentDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
-    <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IResumeDal.cs" />
     <Compile Include="Abstract\ISkillDal.cs" />
-    <Compile Include="Concrete\Context.cs" />
+    <Compile Include="Concrete\EntityFramework\LocalContext.cs" />
+    <Compile Include="Concrete\EntityFramework\EfAboutDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfAdminDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfAuthorDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfBlogDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCommentDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfContactDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfResumeDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfSkillDal.cs" />
     <Compile Include="Concrete\Repository.cs" />
     <Compile Include="Migrations\202303101905392_mig1.cs" />
     <Compile Include="Migrations\202303101905392_mig1.designer.cs">
@@ -160,6 +168,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\CoreLayer.csproj">
+      <Project>{e3fca7a1-e14b-46f9-86cf-a1879d261076}</Project>
+      <Name>CoreLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
       <Project>{1ceefbad-b9e4-46a4-834d-beaf6faab767}</Project>
       <Name>EntityLayer</Name>
@@ -177,6 +189,7 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -98,7 +98,7 @@ namespace BlogProject.Controllers
         [HttpGet]
         public ActionResult AddNewBlog()
         {
-            Context c = new Context();
+            LocalContext c = new LocalContext();
             List<SelectListItem> values = (from x in c.Categories.ToList()
                                            select new SelectListItem
                                            {
@@ -130,7 +130,7 @@ namespace BlogProject.Controllers
         public ActionResult UpdateBlog(int id)
         {
             Blog blog = bm.FindBlog(id);
-            Context c = new Context();
+            LocalContext c = new LocalContext();
             List<SelectListItem> values = (from x in c.Categories.ToList()
                                            select new SelectListItem
                                            {

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33027.164
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogProject", "BlogProject\BlogProject.csproj", "{8194445B-8115-4764-9D7C-8B08B22C43CA}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{308D8A54-C6BC-4F1E-AEBC-13D9D1305A16}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{23DB1D16-04AF-4CEC-B2AF-97190F4BE4FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLayer", "ClassLibrary1\CoreLayer.csproj", "{E3FCA7A1-E14B-46F9-86CF-A1879D261076}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{23DB1D16-04AF-4CEC-B2AF-97190F4BE4FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23DB1D16-04AF-4CEC-B2AF-97190F4BE4FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23DB1D16-04AF-4CEC-B2AF-97190F4BE4FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3FCA7A1-E14B-46F9-86CF-A1879D261076}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3FCA7A1-E14B-46F9-86CF-A1879D261076}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3FCA7A1-E14B-46F9-86CF-A1879D261076}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3FCA7A1-E14B-46F9-86CF-A1879D261076}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

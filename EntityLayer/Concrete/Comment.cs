@@ -1,10 +1,11 @@
-﻿using System;
+﻿using CoreLayer.Entities;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace EntityLayer.Concrete
 {
-    public class Comment
-    {
+    public class Comment: IEntity
+	{
         [Key]
         public int CommentID { get; set; }
         [StringLength(50)]

@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+        <h1>Hasan Aslan</h1>
+        <p>I am <span class="typed" data-typed-items="Web Designer,Web Developer, Freelancer, Photographer"></span></p>
+    </div>
+</section>
+@Html.Action("About", "AdminInformation")
+@Html.Action("Facts", "AdminInformation")
+@Html.Action("Resume", "AdminInformation")
+@Html.Action("Services", "AdminInformation")
+@Html.Action("Skills", "AdminInformation")
+@Html.Action("FeaturedPosts", "Blog")
+@Html.Action("BlogList", "Blog")
+@Html.Action("Index", "Contact")
+@Html.Action("AddMail", "MailSubcribe")
+@Html.Action("Footer", "About")

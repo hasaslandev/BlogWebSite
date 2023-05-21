@@ -1,18 +1,16 @@
-﻿using DataAccessLayer.Abstract;
-using EntityLayer.Concrete;
+﻿using CoreLayer.DataAccess;
+using CoreLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public class Repository<T> : IEntityRepository<T> where T : class,IEntity,new()
     {
-        Context context = new Context();
+        LocalContext context = new LocalContext();
         DbSet<T> _object;
         public Repository()
         {

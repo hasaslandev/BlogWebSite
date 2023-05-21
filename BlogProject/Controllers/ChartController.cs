@@ -22,7 +22,7 @@ namespace BlogProject.Controllers
         public List<Class1> Bloglist()
         {
             List<Class1> cs = new List<Class1>();
-            using(var c = new Context())
+            using(var c = new LocalContext())
             {
                 cs = c.Blogs.Select(x => new Class1
                 {

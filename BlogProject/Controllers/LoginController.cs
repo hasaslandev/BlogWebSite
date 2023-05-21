@@ -19,7 +19,7 @@ namespace BlogProject.Controllers
         [HttpPost]
         public ActionResult Index(Admin p)
         {
-            Context c = new Context();
+            LocalContext c = new LocalContext();
             var userinfo = c.Admins.FirstOrDefault(x => x.UserName == p.UserName && x.Password == p.Password);
             if (userinfo !=null)
             {
