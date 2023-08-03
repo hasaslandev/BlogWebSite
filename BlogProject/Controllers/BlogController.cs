@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete;
+using DataAccessLayer.Concrete.EntityFramework;
 using EntityLayer.Concrete;
 using PagedList;
 using PagedList.Mvc;
@@ -14,7 +15,7 @@ namespace BlogProject.Controllers
 
     public class BlogController : Controller
     {
-        BlogManager bm = new BlogManager();
+        BlogManager bm = new BlogManager(new EfBlogDal());
         // GET: Blog
         public ActionResult Index()
         {
@@ -155,7 +156,7 @@ namespace BlogProject.Controllers
         }
         public ActionResult GetCommentByBlog(int id)
         {
-            CommentManager cm = new CommentManager();
+            CommentManager cm = new CommentManager(new EfCommentDal());
             var commentList = cm.CommentById(id);
             return View(commentList);
         }

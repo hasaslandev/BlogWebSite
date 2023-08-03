@@ -10,41 +10,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete.EntityFramework
 {
-	public class EfAdminDal : EfEntityRepositoryBase<About, LocalContext>,IAdminDal
+	public class EfAdminDal : EfEntityRepositoryBase<Admin, LocalContext>,IAdminDal
 	{
-		public int Delete(Admin p)
-		{
-			throw new NotImplementedException();
-		}
 
-		public Admin Find(Expression<Func<Admin, bool>> where)
-		{
-			throw new NotImplementedException();
-		}
-
-		public Admin GetByID(int id)
-		{
-			throw new NotImplementedException();
-		}
-
-		public int Insert(Admin p)
-		{
-			throw new NotImplementedException();
-		}
-
-		public List<Admin> List()
-		{
-			throw new NotImplementedException();
-		}
-
-		public List<Admin> List(Expression<Func<Admin, bool>> filter = null)
-		{
-			throw new NotImplementedException();
-		}
-
-		public int Update(Admin p)
-		{
-			throw new NotImplementedException();
-		}
 	}
 }

@@ -2706,24 +2706,6 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
-      <Project>{23db1d16-04af-4cec-b2af-97190f4be4fa}</Project>
-      <Name>BusinessLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ClassLibrary1\CoreLayer.csproj">
-      <Project>{e3fca7a1-e14b-46f9-86cf-a1879d261076}</Project>
-      <Name>CoreLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
-      <Project>{308d8a54-c6bc-4f1e-aebc-13d9d1305a16}</Project>
-      <Name>DataAccessLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
-      <Project>{1ceefbad-b9e4-46a4-834d-beaf6faab767}</Project>
-      <Name>EntityLayer</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

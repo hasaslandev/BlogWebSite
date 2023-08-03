@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using System;
@@ -11,14 +12,20 @@ namespace BusinessLayer.Concrete
 {
     public class AdminManager:IAdminService
     {
-        Repository<Admin> repoadmin = new Repository<Admin>();
+        IAdminDal _adminDal;
+
+        public AdminManager(IAdminDal adminDal)
+        {
+            _adminDal = adminDal;
+        }
+
         public List<Admin> GetAll()
         {
-            return repoadmin.List();
+            return _adminDal.List();
         }
         public List<Admin> GetBlogByAdmin(int id)
         {
-            return repoadmin.List(x => x.AdminID == id);
+            return _adminDal.List(x => x.AdminID == id);
         }
 
     }

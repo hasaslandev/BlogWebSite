@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using System;
@@ -11,10 +12,16 @@ namespace BusinessLayer.Concrete
 {
     public class CategoryManager:ICategoryService
     {
-        Repository<Category> repocategory = new Repository<Category>();
+        ICategoryDal _categoryDal;
+
+        public CategoryManager(ICategoryDal categoryDal)
+        {
+            _categoryDal = categoryDal;
+        }
+
         public List<Category> GetAll()
         {
-            return repocategory.List();
+            return _categoryDal.List();
         }
 
 	}

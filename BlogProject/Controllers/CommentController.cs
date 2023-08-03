@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace BlogProject.Controllers
     public class CommentController : Controller
     {
         // GET: Comment
-        CommentManager cm = new CommentManager();
+        CommentManager cm = new CommentManager(new EfCommentDal());
         public PartialViewResult CommentList(int id)
         {
             var commentList = cm.CommentById(id);

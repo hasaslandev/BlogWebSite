@@ -1,5 +1,6 @@
 ﻿using CoreLayer.DataAccess;
 using EntityLayer.Concrete;
+using EntityLayer.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,7 @@ namespace DataAccessLayer.Abstract
 {
     public interface IBlogDal:IEntityRepository<Blog>
     {
+        List<BlogDetailDto> GetBlogDetails();
+
     }
 }

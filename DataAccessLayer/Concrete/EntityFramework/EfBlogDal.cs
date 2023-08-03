@@ -1,6 +1,7 @@
 ﻿using ClassLibrary1.DataAccess.EntityFramework;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
+using EntityLayer.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,41 +11,19 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete.EntityFramework
 {
-	public class EfBlogDal : EfEntityRepositoryBase<About, LocalContext>, IBlogDal
+	public class EfBlogDal : EfEntityRepositoryBase<Blog, LocalContext>, IBlogDal
 	{
-		public int Delete(Blog p)
-		{
-			throw new NotImplementedException();
-		}
-
-		public Blog Find(Expression<Func<Blog, bool>> where)
-		{
-			throw new NotImplementedException();
-		}
-
-		public Blog GetByID(int id)
-		{
-			throw new NotImplementedException();
-		}
-
-		public int Insert(Blog p)
-		{
-			throw new NotImplementedException();
-		}
-
-		public List<Blog> List()
-		{
-			throw new NotImplementedException();
-		}
-
-		public List<Blog> List(Expression<Func<Blog, bool>> filter = null)
-		{
-			throw new NotImplementedException();
-		}
-
-		public int Update(Blog p)
-		{
-			throw new NotImplementedException();
-		}
+        public List<BlogDetailDto> GetBlogDetails()
+        {
+			using (LocalContext context = new LocalContext())
+			{
+				var result = from p in context.Blogs
+							 join c in context.Categories
+							 on p.CategoryID equals c.CategoryID
+							 select new BlogDetailDto { BlogID=p.BlogID, CategoryID=c.CategoryID,BlogTitle=p.BlogTitle };
+                return result.ToList();
+            }
+			
+        }
 	}
 }

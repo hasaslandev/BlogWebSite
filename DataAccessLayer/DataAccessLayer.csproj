@@ -60,6 +60,8 @@
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IResumeDal.cs" />
     <Compile Include="Abstract\ISkillDal.cs" />
+    <Compile Include="Abstract\ISubscribeMailDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfSubscribeMailDal.cs" />
     <Compile Include="Concrete\EntityFramework\LocalContext.cs" />
     <Compile Include="Concrete\EntityFramework\EfAboutDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfAdminDal.cs" />
@@ -70,7 +72,6 @@
     <Compile Include="Concrete\EntityFramework\EfContactDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfResumeDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfSkillDal.cs" />
-    <Compile Include="Concrete\Repository.cs" />
     <Compile Include="Migrations\202303101905392_mig1.cs" />
     <Compile Include="Migrations\202303101905392_mig1.designer.cs">
       <DependentUpon>202303101905392_mig1.cs</DependentUpon>
@@ -168,10 +169,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\CoreLayer.csproj">
-      <Project>{e3fca7a1-e14b-46f9-86cf-a1879d261076}</Project>
-      <Name>CoreLayer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
       <Project>{1ceefbad-b9e4-46a4-834d-beaf6faab767}</Project>
       <Name>EntityLayer</Name>

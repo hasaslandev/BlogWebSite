@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace BlogProject.Controllers
     public class AuthorController : Controller
     {
         // GET: Author
-        BlogManager bm = new BlogManager();
+        BlogManager bm = new BlogManager(new EfBlogDal());
         public PartialViewResult AuthorAbout(int id)
         {
             var authordetail = bm.GetBlogById(id);

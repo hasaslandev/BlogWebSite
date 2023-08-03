@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using System;
@@ -11,22 +12,28 @@ namespace BusinessLayer.Concrete
 {
    public class CommentManager:ICommentService
     {
-        Repository<Comment> repocomment = new Repository<Comment>();
+        ICommentDal _commentDal;
+
+        public CommentManager(ICommentDal commentDal)
+        {
+            _commentDal = commentDal;
+        }
+
         public List<Comment> CommentList()
         {
-            return repocomment.List(); 
+            return _commentDal.List(); 
         }
         public List<Comment>CommentById(int id)
         {
-            return repocomment.List(x => x.BlogID == id);
+            return _commentDal.List(x => x.BlogID == id);
         }
         public List<Comment> CommentByStatusTrue()
         {
-            return repocomment.List(x => x.CommentStatus == true);
+            return _commentDal.List(x => x.CommentStatus == true);
         }
         public List<Comment> CommentByStatusFalse()
         {
-            return repocomment.List(x => x.CommentStatus == false);
+            return _commentDal.List(x => x.CommentStatus == false);
         }
         public int CommentAdd(Comment c)
         {
@@ -35,19 +42,19 @@ namespace BusinessLayer.Concrete
             {
                 return -1;
             }
-            return repocomment.Insert(c);
+            return _commentDal.Insert(c);
         }
         public int CommentStatusChangeToFalse(int id)
         {
-            Comment comment = repocomment.Find(x => x.CommentID == id);
+            Comment comment = _commentDal.Find(x => x.CommentID == id);
             comment.CommentStatus = false;
-            return repocomment.Update(comment);
+            return _commentDal.Update(comment);
         }
         public int CommentStatusChangeToTrue(int id)
         {
-            Comment comment = repocomment.Find(x => x.CommentID == id);
+            Comment comment = _commentDal.Find(x => x.CommentID == id);
             comment.CommentStatus = true;
-            return repocomment.Update(comment);
+            return _commentDal.Update(comment);
         }
 	}
 }

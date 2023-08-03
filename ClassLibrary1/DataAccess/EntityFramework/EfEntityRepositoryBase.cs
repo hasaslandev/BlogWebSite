@@ -12,7 +12,7 @@ namespace ClassLibrary1.DataAccess.EntityFramework
 {
     public class EfEntityRepositoryBase<TEntity,TContext>:IEntityRepository<TEntity>
         where TEntity : class,IEntity, new()
-        where TContext : DbContext
+        where TContext : DbContext,new()
     {
         public int Delete(TEntity p)
         {
@@ -31,17 +31,30 @@ namespace ClassLibrary1.DataAccess.EntityFramework
 
         public int Insert(TEntity p)
         {
-            throw new NotImplementedException();
+            using (TContext context = new TContext())
+            {
+                var addedEntity = context.Entry(p);
+                addedEntity.State = EntityState.Added;
+                return context.SaveChanges();
+            }
         }
 
         public List<TEntity> List()
         {
-            throw new NotImplementedException();
+            using (TContext context = new TContext())
+            {
+                return context.Set<TEntity>().ToList();
+            }
         }
 
         public List<TEntity> List(Expression<Func<TEntity, bool>> filter)
         {
-            throw new NotImplementedException();
+            using (TContext context = new TContext())
+            {
+                return filter == null
+                    ? context.Set<TEntity>().ToList()
+                    : context.Set<TEntity>().Where(filter).ToList();
+            }
         }
 
         public int Update(TEntity p)

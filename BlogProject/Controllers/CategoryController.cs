@@ -1,4 +1,6 @@
-﻿using BusinessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +12,7 @@ namespace BlogProject.Controllers
     public class CategoryController : Controller
     {
         // GET: Category
-        CategoryManager categoryManager = new CategoryManager(); 
+        ICategoryService categoryManager = new CategoryManager(new EfCategoryDal()); 
         public ActionResult Index()
         {
             var Cvalues = categoryManager.GetAll();

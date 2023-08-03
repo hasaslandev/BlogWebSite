@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using System;
@@ -11,14 +12,20 @@ namespace BusinessLayer.Concrete
 {
     public class SkillManager:ISkillService
     {
-        Repository<Skill> repoadmin = new Repository<Skill>();
+        ISkillDal _skillDal;
+
+        public SkillManager(ISkillDal skillDal)
+        {
+            _skillDal = skillDal;
+        }
+
         public List<Skill> GetAll()
         {
-            return repoadmin.List();
+            return _skillDal.List();
         }
         public List<Skill> GetBlogByAdmin(int id)
         {
-            return repoadmin.List(x => x.SkillID == id);
+            return _skillDal.List(x => x.SkillID == id);
         }
     }
 }

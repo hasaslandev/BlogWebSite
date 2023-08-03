@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace BlogProject.Controllers
     public class AboutController : Controller
     {
         // GET: About
-        AboutManager abm = new AboutManager();
+        AboutManager abm = new AboutManager(new EfAboutDal());
 
         public ActionResult Index()
         {
@@ -19,7 +20,7 @@ namespace BlogProject.Controllers
         }
         public PartialViewResult Footer()
         {
-            AboutManager aboutManager = new AboutManager();
+            AboutManager aboutManager = new AboutManager(new EfAboutDal());
             var aboutcontentlist=aboutManager.GetAll();
             return PartialView(aboutcontentlist);
         }

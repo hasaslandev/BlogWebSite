@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using System;
@@ -11,7 +12,12 @@ namespace BusinessLayer.Concrete
 {
     public class ContactManager:IContackService
     {
-        Repository<Contact> repocontact = new Repository<Contact>();
+        IContactDal _contactDal;
+
+        public ContactManager(IContactDal contactDal)
+        {
+            _contactDal = contactDal;
+        }
 
         public int BLContactAdd(Contact c)
         {
@@ -20,15 +26,15 @@ namespace BusinessLayer.Concrete
             {
                 return -1;
             }
-            return repocontact.Insert(c);
+            return _contactDal.Insert(c);
         }
         public List<Contact> GetAll()
         {
-            return repocontact.List();
+            return _contactDal.List();
         }
         public Contact GetContactDetails(int id)
         {
-            return repocontact.Find(x => x.ContactID == id);
+            return _contactDal.Find(x => x.ContactID == id);
         }
     }
 }

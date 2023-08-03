@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace BlogProject.Controllers
     public class ContactController : Controller
     {
         // GET: Contact
-        ContactManager cm = new ContactManager();
+        ContactManager cm = new ContactManager(new EfContactDal());
         public PartialViewResult Index()
         {
             return PartialView();

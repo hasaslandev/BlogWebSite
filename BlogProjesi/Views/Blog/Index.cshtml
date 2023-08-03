@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Entity.Concrete.Blog>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Kategori Adı</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BlogID</td>
+            <td>@item.BlogContent</td>
+        </tr>
+    }
+</table>

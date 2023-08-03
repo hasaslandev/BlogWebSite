@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,8 @@ namespace BlogProject.Controllers
     public class AdminInformationController : Controller
     {
         // GET: Adminİnformation
-        AdminManager am = new AdminManager();
-        SkillManager sm = new SkillManager();
+        AdminManager am = new AdminManager(new EfAdminDal());
+        SkillManager sm = new SkillManager(new EfSkillDal());
         public PartialViewResult About()
         {
             var adminvalues = am.GetAll();

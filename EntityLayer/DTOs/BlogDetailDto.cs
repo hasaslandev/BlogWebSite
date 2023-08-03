@@ -9,6 +9,9 @@ namespace EntityLayer.DTOs
 {
     public class BlogDetailDto:IDto
     {
-        /*Burada propları kullanacağız*/
+        public int BlogID { get; set; }
+        public string BlogTitle { get; set; }
+        public int CategoryID { get; set; }
+        public string CategoryName { get; set; }
     }
 }
