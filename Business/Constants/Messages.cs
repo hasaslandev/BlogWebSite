@@ -16,5 +16,6 @@ namespace Business.Constants
         public static string AboutCountOfBlogError="Bir Blogda en fazla 10 hakkında yazısı olabilir";
         public static string AboutNameAlreadyExists="Bu isimde zaten bir kayıt var";
         public static string BlogLimitExceded="Blog limiti aşıldığı için yeni about eklenemiyor";
+        public static string? AuthorizationDenied ="Yetkin yok la...";
     }
 }

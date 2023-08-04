@@ -26,8 +26,9 @@ namespace BlogProjesiAPI.Controllers
             }
             return BadRequest(result);
         }
+
         [HttpPost("Add")]
-        public IActionResult Post(About about)
+        public IActionResult Add(About about)
         {
             var result = _aboutService.Add(about);
             if (result.Success)

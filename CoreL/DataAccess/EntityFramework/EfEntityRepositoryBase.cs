@@ -59,7 +59,7 @@ namespace CoreL.DataAccess.EntityFramework
             }
         }
 
-        public List<TEntity> GetAll(Expression<Func<TEntity, bool>> filter)
+        public List<TEntity> GetAll(Expression<Func<TEntity, bool>>? filter)
         {
             using (TContext context = new TContext())
             {

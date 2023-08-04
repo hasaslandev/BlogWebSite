@@ -15,7 +15,7 @@ namespace Entity.Concrete
         [StringLength(50)]
         public string SkillName { get; set; }
         public int SkillRating { get; set; }
-        public int AdminID { get; set; }
-        public virtual Admin Admin { get; set; }
+        //public int AdminID { get; set; }
+        //public virtual Admin Admin { get; set; }
     }
 }

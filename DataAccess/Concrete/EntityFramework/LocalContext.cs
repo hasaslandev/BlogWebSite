@@ -1,4 +1,5 @@
-﻿using Entity.Concrete;
+﻿using CoreL.Entities.Concrete;
+using Entity.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,8 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Skill> Skills { get; set; }
         public DbSet<Resume> Resumes { get; set; }
         public DbSet<Job> Jobs { get; set; }
+        public DbSet<OperationClaim> OperationClaims { get; set; }
+        public DbSet<AdminOperationClaim> AdminOperationClaims { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=DESKTOP-M89OB8P;Database=BlogSimpleDb;Trusted_Connection=true");

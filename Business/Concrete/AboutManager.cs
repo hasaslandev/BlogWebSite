@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.CCS;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
@@ -12,6 +13,7 @@ using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,12 +22,14 @@ namespace Business.Concrete
     public class AboutManager : IAboutService
     {
         IAboutDal _aboutDal;
-        ICategoryService _categoryService;
+        ICategoryService _categoryService;//******1 EntityManager kendisi haric başka dalı enjecte edemez*****
         public AboutManager(IAboutDal aboutDal, ICategoryService categoryService)
         {
             _aboutDal = aboutDal;
             _categoryService = categoryService;
         }
+
+        [SecuredOperation("admin,product.add")]
         [ValidationAspect(typeof(AboutValidator))]
         public IResult Add(About about)
         {

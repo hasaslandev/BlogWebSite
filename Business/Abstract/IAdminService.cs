@@ -1,4 +1,5 @@
-﻿using CoreL.Utilities.Results;
+﻿using CoreL.Entities.Concrete;
+using CoreL.Utilities.Results;
 using Entity.Concrete;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,12 @@ namespace Business.Abstract
 {
     public interface IAdminService
     {
-        IDataResult<List<Admin>> GetAll();
-        IDataResult<List<Admin>> GetBlogByAdmin(int id);
+
+        List<OperationClaim> GetClaims(Admin admin);
+        void Add(Admin admin);
+        Admin GetByMail(string email);
     }
+
+
+
 }

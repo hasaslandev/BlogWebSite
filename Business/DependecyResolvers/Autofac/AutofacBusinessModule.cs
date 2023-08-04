@@ -5,8 +5,10 @@ using Business.CCS;
 using Business.Concrete;
 using Castle.DynamicProxy;
 using CoreL.Utilities.Interceptors;
+using CoreL.Utilities.Security.JWT;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +32,11 @@ namespace Business.DependecyResolvers.Autofac
             builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();
             builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().SingleInstance();
 
+            builder.RegisterType<AdminManager>().As<IAdminService>();
+            builder.RegisterType<EfAdminDal>().As<IAdminDal>();
 
+            builder.RegisterType<AuthManager>().As<IAuthService>();
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>();
 
 
 
