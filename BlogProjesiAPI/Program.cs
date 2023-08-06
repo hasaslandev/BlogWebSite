@@ -57,7 +57,8 @@ namespace BlogProjesiAPI
                 new CoreModule()
             });
 
-            
+
+            ServiceTool.Create(builder.Services);
 
 
 

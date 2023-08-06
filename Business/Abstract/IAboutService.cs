@@ -13,6 +13,9 @@ namespace Business.Abstract
         IDataResult<List<About>> GetAll();
         IResult Add(About p);
         IResult Update(About p);
+        IDataResult<About> GetById(int aboutId);
+        IResult AddTransactionalTest(About about);
+
 
     }
 }

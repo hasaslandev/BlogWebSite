@@ -16,10 +16,20 @@ namespace BlogProjesiAPI.Controllers
             _aboutService = aboutService;
         }
 
-        [HttpGet("Get")]
-        public IActionResult Get()
+        [HttpGet("getall")]
+        public IActionResult GetAll()
         {
             var result = _aboutService.GetAll();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpGet("getbyid")]
+        public IActionResult GetById(int id)
+        {
+            var result = _aboutService.GetById(id);
             if (result.Success)
             {
                 return Ok(result);

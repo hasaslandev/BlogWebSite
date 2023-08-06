@@ -11,7 +11,7 @@ namespace CoreL.Utilities.Security.Encyrption
     {
         public static SigningCredentials CreateSigningCredentials(SecurityKey securityKey)
         {
-            return new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature /*HmacSha512Signature*/);
+            return new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha512Signature /*HmacSha512Signature*/);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace CoreL.Utilities.Security.Encyrption
         public static SecurityKey CreateSecurityKey(string securityKey/*appsetting.json*/)
         {
             /*Simetrik ve olamyanı araştır...*/
-            return new SymmetricSecurityKey( Encoding.UTF8.GetBytes(securityKey));
+            return new SymmetricSecurityKey(Encoding.UTF8.GetBytes(securityKey));
 
         }
     }

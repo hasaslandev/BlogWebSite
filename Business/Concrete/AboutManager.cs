@@ -3,6 +3,9 @@ using Business.BusinessAspects.Autofac;
 using Business.CCS;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
+using CoreL.Aspects.Autofac.Caching;
+using CoreL.Aspects.Autofac.Performance;
+using CoreL.Aspects.Autofac.Transaction;
 using CoreL.Aspects.Autofac.Validation;
 using CoreL.CrossCuttingConcerns.Validation;
 using CoreL.Utilities.Business;
@@ -28,9 +31,10 @@ namespace Business.Concrete
             _aboutDal = aboutDal;
             _categoryService = categoryService;
         }
-
+        //[CasheAspect]Key(Cashe verdiğimiz isim),Value
         [SecuredOperation("admin,product.add")]
         [ValidationAspect(typeof(AboutValidator))]
+        [CacheRemoveAspect("IAboutsService.Get")]
         public IResult Add(About about)
         {
             //Metodun yukarsındaki ifade atribue demek ve bu metot çalışmadan önce yapılacak demek
@@ -47,6 +51,19 @@ namespace Business.Concrete
             return new SuccessResult(Messages.BlogAdded);
         }
 
+        [TransactionScopeAspect]
+        public IResult AddTransactionalTest(About about)
+        {
+            Add(about);
+            if(about.AboutContent1.Length<10)
+            {
+                throw new Exception("");
+            }
+            Add(about);
+            return null;
+        }
+
+        [CacheAspect]//Key(Cashe verdiğimiz isim),Value
         public IDataResult<List<About>> GetAll()
         {
             if (DateTime.Now.Hour == 1)
@@ -58,7 +75,13 @@ namespace Business.Concrete
                 return new SuccessDataResult<List<About>>(_aboutDal.GetAll(), Messages.BlogsListed);
             }
         }
-
+        [CacheAspect]
+        [PerformanceAspect(5)]
+        public IDataResult<About> GetById(int aboutId)
+        {
+            return new SuccessDataResult<About>(_aboutDal.Get(p => p.AboutID == aboutId));
+        }
+        [CacheRemoveAspect("IAboutsService.Get")]
         [ValidationAspect(typeof(AboutValidator))]
         public IResult Update(About about)
         {

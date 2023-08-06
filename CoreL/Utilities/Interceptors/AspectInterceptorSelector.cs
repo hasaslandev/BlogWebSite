@@ -18,7 +18,7 @@ namespace CoreL.Utilities.Interceptors
                 .GetCustomAttributes<MethodInterceptionBaseAttribute>(true);
             classAttributes.AddRange(methodAttributes);
             //classAttributes.Add(new ExceptionLogAspect(typeof(FileLogger)));
-
+            //Üsteki class bütün metotları burdan logluyoruz
             return classAttributes.OrderBy(x => x.Priority).ToArray();
         }
     }
