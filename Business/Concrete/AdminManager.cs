@@ -35,5 +35,15 @@ namespace Business.Concrete
         {
             return _adminDal.Get(u => u.Email == email);
         }
+
+        public void Update(Admin admin)
+        {
+            _adminDal.UpdateAsync(admin);
+        }
+
+        public void Delete(Admin admin)
+        {
+            _adminDal.DeleteAsync(admin);
+        }
     }
 }

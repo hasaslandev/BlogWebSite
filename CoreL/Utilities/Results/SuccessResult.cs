@@ -15,5 +15,5 @@ namespace CoreL.Utilities.Results
         {
 
         }
-    }
+    }   
 }

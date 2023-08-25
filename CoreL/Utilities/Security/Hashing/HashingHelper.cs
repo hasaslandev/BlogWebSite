@@ -29,9 +29,9 @@ namespace CoreL.Utilities.Security.Hashing
                         return false;
                     }
                 }
-
+                return true;
             }
-            return true;
+            
         }
     }
 }

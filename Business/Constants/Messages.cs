@@ -17,5 +17,11 @@ namespace Business.Constants
         public static string AboutNameAlreadyExists="Bu isimde zaten bir kayıt var";
         public static string BlogLimitExceded="Blog limiti aşıldığı için yeni about eklenemiyor";
         public static string? AuthorizationDenied ="Yetkin yok la...";
+        public static string AboutDelete ="Hakkımda silindi";
+        public static string CategoryDelete ="Kategori silindi";
+        public static string CommentUpdate ="Yorum güncellendi";
+        public static string ContactUpdate ="Contact güncellendi";
+        public static string CommentStatusTrue ="Yorum aktif";
+        public static string CommentStatusFalse ="Yorum kapatıldı!!!";
     }
 }

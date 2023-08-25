@@ -12,13 +12,7 @@ namespace Entity.Concrete
     {
         [Key]
         public int ResumeID { get; set; }
-        [StringLength(50)]
         public string ResumeJobs { get; set; }
-        [StringLength(2000)]
         public string ResumeStatement { get; set; }
-        //public int AdminID { get; set; }
-        //public virtual Admin Admin { get; set; }
-
-
     }
 }

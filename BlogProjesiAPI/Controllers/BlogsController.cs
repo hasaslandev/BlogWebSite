@@ -16,26 +16,35 @@ namespace BlogProjesiAPI.Controllers
             _blogService = blogService;
         }
 
-        [HttpGet("Get")]
-        public IActionResult Get()
+        [HttpGet("getall")]
+        public IActionResult GetAll()
         {
            var result = _blogService.GetAll();
             if (result.Success)
             {
-                return Ok(result);//result. konusuna biraz bak
+                return Ok(result);
             }
             return BadRequest(result);
         }
-        [HttpPost("Add")]//Buraları test et isim ver vs
+        [HttpPost("add")]
         public IActionResult Add(Blog blog)
         {
             var result = _blogService.Add(blog);
             if (result.Success)
             {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpGet("getblogbycategory")]
+        public IActionResult GetBlogByCategory(int categoryId)
+        {
+            var result = _blogService.GetBlogByCategory(categoryId);
+            if (result.Success)
+            {
                 return Ok(result);//result. konusuna biraz bak
             }
             return BadRequest(result);
         }
-
     }
 }

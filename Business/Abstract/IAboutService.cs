@@ -13,6 +13,7 @@ namespace Business.Abstract
         IDataResult<List<About>> GetAll();
         IResult Add(About p);
         IResult Update(About p);
+        IResult Delete(int aboutId);
         IDataResult<About> GetById(int aboutId);
         IResult AddTransactionalTest(About about);
 

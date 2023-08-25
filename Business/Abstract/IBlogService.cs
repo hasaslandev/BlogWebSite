@@ -12,11 +12,10 @@ namespace Business.Abstract
     {
         IDataResult<List<Blog>> GetAll();
         IDataResult<List<Blog>> GetBlogById(int id);
-        IDataResult<List<Blog>> GetBlogByAuthor(int id);
         IDataResult<List<Blog>> GetBlogByCategory(int id);
-        IResult DeleteBlogBL(int p);
+        IResult DeleteBlogBL(int blog);
         Blog FindBlog(int id);
-        IResult UpdateBlog(Blog p);
+        IResult UpdateBlog(Blog b);
 
 
         IDataResult<Blog> GetById(int blogId);

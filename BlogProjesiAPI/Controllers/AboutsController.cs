@@ -19,6 +19,7 @@ namespace BlogProjesiAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
+            Thread.Sleep(5);
             var result = _aboutService.GetAll();
             if (result.Success)
             {
@@ -37,7 +38,7 @@ namespace BlogProjesiAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPost("Add")]
+        [HttpPost("add")]
         public IActionResult Add(About about)
         {
             var result = _aboutService.Add(about);
@@ -48,10 +49,20 @@ namespace BlogProjesiAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPost("Put")]
+        [HttpPost("update")]
         public IActionResult Update(About about)
         {
             var result = _aboutService.Update(about);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpDelete("delete")]
+        public IActionResult Delete(int aboutId)
+        {
+            var result = _aboutService.Delete(aboutId);
             if (result.Success)
             {
                 return Ok(result);

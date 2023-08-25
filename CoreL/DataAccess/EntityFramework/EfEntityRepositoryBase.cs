@@ -25,7 +25,11 @@ namespace CoreL.DataAccess.EntityFramework
 
         public TEntity Find(Expression<Func<TEntity, bool>> where)
         {
-            throw new NotImplementedException();
+            using (TContext context = new TContext())
+            {
+                return context.Set<TEntity>().FirstOrDefault(where);
+
+            }
         }
 
         public TEntity Get(Expression<Func<TEntity, bool>> filter)
@@ -93,6 +97,19 @@ namespace CoreL.DataAccess.EntityFramework
         public Task<bool> AnyAsync(TEntity entity)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            using (TContext context = new TContext())
+            {
+                var entity = await context.Set<TEntity>().FindAsync(id);
+                if (entity != null)
+                {
+                    context.Set<TEntity>().Remove(entity);
+                    await context.SaveChangesAsync();
+                }
+            }
         }
 
         //public IQueryable<IEntity> GetAll(Expression<Func<IEntity, bool>> expression)

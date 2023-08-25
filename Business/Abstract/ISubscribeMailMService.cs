@@ -10,6 +10,8 @@ namespace Business.Abstract
 {
     public interface ISubscribeMailMService
     {
-        IResult Add(SubscribeMail p);
+        IDataResult<List<SubscribeMail>> GetAll();
+        IResult Add(SubscribeMail subscribeMail);
+        IResult Delete(int subscribeMailId);
     }
 }

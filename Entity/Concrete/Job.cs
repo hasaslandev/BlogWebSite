@@ -12,9 +12,6 @@ namespace Entity.Concrete
     {
         [Key]
         public int JobID { get; set; }
-        [StringLength(20)]
         public string JobName { get; set; }
-        //public int AdminID { get; set; }
-       // public virtual Admin Admin { get; set; }
     }
 }

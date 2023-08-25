@@ -13,7 +13,7 @@ namespace CoreL.Utilities.Security.JWT
     }
 }
 /*
-Eğer doğruysa bu operasyon çalışacak ilgili kullan ıcı için veritabanına gidecek
-bu kullanıcının CLaimlerini buluşturacak orda bir JWT üretecek onları buraya vercek 
+Eğer doğruysa bu operasyon çalışacak ilgili kullanıcı için veritabanına gidecek
+bu kullanıcının CLaimlerini buluşturacak orda bir JWT üretecek onları cliente vercek 
  
 */

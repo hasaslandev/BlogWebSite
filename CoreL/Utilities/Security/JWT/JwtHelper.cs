@@ -20,7 +20,7 @@ namespace CoreL.Utilities.Security.JWT
         public JwtHelper(IConfiguration configuration)
         {
             Configuration = configuration;
-            _tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
+            _tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();//TokenOptions classına mapliyoruz(JSON TO CLASS)
 
         }
         public AccessToken CreateToken(Admin admin, List<OperationClaim> operationClaims)

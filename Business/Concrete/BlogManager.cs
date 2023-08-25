@@ -38,10 +38,7 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<Blog>>(_repoblog.GetAll(x => x.BlogID == id));
         }
-        public IDataResult<List<Blog>> GetBlogByAuthor(int id)
-        {
-            return new SuccessDataResult<List<Blog>> (_repoblog.GetAll(x => x.AuthorID == id));
-        }
+
         public IDataResult<List<Blog>> GetBlogByCategory(int id)
         {
             return new SuccessDataResult<List<Blog>>(_repoblog.GetAll(x => x.CategoryID == id));
@@ -68,9 +65,9 @@ namespace Business.Concrete
             _repoblog.AddAsync(blog);
             return new SuccessResult(Messages.BlogAdded);
         }
-        public IResult DeleteBlogBL(int p)
+        public IResult DeleteBlogBL(int id)
         {
-            Blog blog = _repoblog.Find(x => x.BlogID == p);
+            Blog blog = _repoblog.Find(x => x.BlogID == id);
             _repoblog.DeleteAsync(blog);
             return new SuccessResult(Messages.BlogAdded);
 
@@ -79,17 +76,16 @@ namespace Business.Concrete
         {
             return _repoblog.Find(x => x.BlogID == id);
         }
-        public IResult UpdateBlog(Blog p)
+        public IResult UpdateBlog(Blog b)
         {
-            Blog blog = _repoblog.Find(x => x.BlogID == p.BlogID);
-            blog.BlogTitle = p.BlogTitle;
-            blog.BlogContent = p.BlogContent;
-            blog.BlogDate = p.BlogDate;
-            blog.BlogImage = p.BlogImage;
-            blog.CategoryID = p.CategoryID;
-            blog.AuthorID = p.AuthorID;
+            Blog blog = _repoblog.Find(x => x.BlogID == b.BlogID);
+            blog.BlogTitle = b.BlogTitle;
+            blog.BlogContent = b.BlogContent;
+            blog.BlogDate = b.BlogDate;
+            blog.BlogImage = b.BlogImage;
+            blog.CategoryID = b.CategoryID;
             _repoblog.UpdateAsync(blog);
-            return new SuccessResult(Messages.BlogAdded);
+            return new SuccessResult(Messages.CommentUpdate);
 
         }
     }

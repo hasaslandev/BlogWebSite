@@ -12,12 +12,12 @@ namespace Business.ValidationRules.FluentValidation
     {
         public AboutValidator()
         {
-            RuleFor(p => p.AboutID).NotEmpty();
             RuleFor(p => p.AboutContent1).MaximumLength(2000).WithMessage("AboutContent1'in max limiti aştın");
             RuleFor(p => p.AboutContent2).MaximumLength(2000).WithMessage("AboutContent2'in max limiti aştın");
             RuleFor(p => p.AboutImage1).MaximumLength(100).WithMessage("AboutImage1'in max limiti aştın");
-            RuleFor(p => p.AboutImage2).MaximumLength(100).WithMessage("AboutImage2'in max limiti aştın");
+            RuleFor(p => p.AboutImage2).MaximumLength(10).WithMessage("AboutImage2'in max limiti aştın");
         }
         
     }
 }
+ 

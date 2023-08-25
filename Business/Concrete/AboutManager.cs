@@ -11,6 +11,7 @@ using CoreL.CrossCuttingConcerns.Validation;
 using CoreL.Utilities.Business;
 using CoreL.Utilities.Results;
 using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework;
 using Entity.Concrete;
 using FluentValidation;
 using System;
@@ -33,8 +34,8 @@ namespace Business.Concrete
         }
         //[CasheAspect]Key(Cashe verdiğimiz isim),Value
         [SecuredOperation("admin,product.add")]
-        [ValidationAspect(typeof(AboutValidator))]
-        [CacheRemoveAspect("IAboutsService.Get")]
+        //[ValidationAspect(typeof(AboutValidator))]
+        //[CacheRemoveAspect("IAboutsService.Get")]
         public IResult Add(About about)
         {
             //Metodun yukarsındaki ifade atribue demek ve bu metot çalışmadan önce yapılacak demek
@@ -63,6 +64,19 @@ namespace Business.Concrete
             return null;
         }
 
+        public IResult Delete(int id)
+        {
+            About about = _aboutDal.Find(x => x.AboutID == id);
+            if (about == null)
+            {
+                return new ErrorResult("about yok");
+            }
+
+            _aboutDal.DeleteAsync(about).Wait(); // await kullanılmış hali
+            return new SuccessResult(Messages.AboutDelete);
+
+        }
+
         [CacheAspect]//Key(Cashe verdiğimiz isim),Value
         public IDataResult<List<About>> GetAll()
         {
@@ -76,7 +90,7 @@ namespace Business.Concrete
             }
         }
         [CacheAspect]
-        [PerformanceAspect(5)]
+        //[PerformanceAspect(5)]
         public IDataResult<About> GetById(int aboutId)
         {
             return new SuccessDataResult<About>(_aboutDal.Get(p => p.AboutID == aboutId));

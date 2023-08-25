@@ -1,7 +1,10 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using CoreL.Entities.Concrete;
 using CoreL.Utilities.Results;
 using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework;
+using Entity.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,12 +39,24 @@ namespace Business.Concrete
 
         public IDataResult<List<Admin>> GetAll()
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<Admin>>(_adminDal.GetAll(), Messages.BlogsListed);
+
         }
 
         public IDataResult<List<Admin>> GetBlogByAdmin(int id)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<Admin>>(_adminDal.GetAll(u=>u.AdminID==id),Messages.BlogsListed);
+        }
+
+        public void Update(Admin admin)
+        {
+            _adminDal.UpdateAsync(admin);
+        }
+
+        public void Delete(Admin admin)
+        {
+            _adminDal.DeleteAsync(admin);
+
         }
     }
 }

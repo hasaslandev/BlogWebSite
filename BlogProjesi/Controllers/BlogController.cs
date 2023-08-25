@@ -112,11 +112,11 @@ namespace BlogProjesi.Controllers
                                                Value = x.CategoryID.ToString()
                                            }).ToList();
             ViewBag.values = values;
-            List<SelectListItem> values2 = (from x in c.Authors.ToList()
+            List<SelectListItem> values2 = (from x in c.Abouts.ToList()
                                             select new SelectListItem
                                             {
-                                                Text = x.AuthorName,
-                                                Value = x.AuthorID.ToString()
+                                                Text = x.AboutImage1,
+                                                Value = x.AboutID.ToString()
                                             }).ToList();
             ViewBag.values2 = values2;
             return View();
@@ -144,11 +144,11 @@ namespace BlogProjesi.Controllers
                                                Value = x.CategoryID.ToString()
                                            }).ToList();
             ViewBag.values = values;
-            List<SelectListItem> values2 = (from x in c.Authors.ToList()
+            List<SelectListItem> values2 = (from x in c.Abouts.ToList()
                                             select new SelectListItem
                                             {
-                                                Text = x.AuthorName,
-                                                Value = x.AuthorID.ToString()
+                                                Text = x.AboutImage1,
+                                                Value = x.AboutID.ToString()
                                             }).ToList();
             ViewBag.values2 = values2;
             return View(blog);
