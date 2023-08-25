@@ -10,7 +10,7 @@ namespace Entity.Concrete
     public class BlogImage:IEntity
     {
         public int Id { get; set; }
-        public string BlogImageFolder { get; set; }
+        public string? BlogImageFolder { get; set; }
         public DateTime Date { get; set; }
         public int BlogId { get; set; }
     }

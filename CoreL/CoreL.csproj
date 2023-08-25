@@ -27,7 +27,6 @@
 
   <ItemGroup>
     <Folder Include="CrossCuttingConcerns\Cashing\Redis\" />
-    <Folder Include="Utilities\Helpers\FileHelper\" />
   </ItemGroup>
 
 </Project>

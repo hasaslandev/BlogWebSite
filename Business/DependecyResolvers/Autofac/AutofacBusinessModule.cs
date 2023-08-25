@@ -4,6 +4,7 @@ using Business.Abstract;
 using Business.CCS;
 using Business.Concrete;
 using Castle.DynamicProxy;
+using CoreL.Utilities.Helpers.FileHelper;
 using CoreL.Utilities.Interceptors;
 using CoreL.Utilities.Security.JWT;
 using DataAccess.Abstract;
@@ -37,6 +38,10 @@ namespace Business.DependecyResolvers.Autofac
 
             builder.RegisterType<AuthManager>().As<IAuthService>();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();
+
+            builder.RegisterType<BlogImageManager>().As<IBlogImageService>().SingleInstance();
+            builder.RegisterType<EfBlogImageDal>().As<IBlogImageDal>().SingleInstance();
+            builder.RegisterType<FileHeplerManager>().As<IFileHelper>().SingleInstance();
 
 
 
