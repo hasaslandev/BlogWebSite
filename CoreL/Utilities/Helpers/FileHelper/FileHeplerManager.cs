@@ -19,7 +19,7 @@ namespace CoreL.Utilities.Helpers.FileHelper
             {
                 if (file.Length > 0)
                 {
-                    //.jpeg olup olmadığını kontrol ediyor, yolu oluşturacak.
+                    //dizinin olup olmadığını kontrol ediyor, yolu oluşturacak.
                     if (!Directory.Exists(root))
                     {
 

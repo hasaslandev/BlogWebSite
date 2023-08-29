@@ -31,6 +31,7 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<OperationClaim> OperationClaims { get; set; }
         public DbSet<AdminOperationClaim> AdminOperationClaims { get; set; }
         public DbSet<BlogImage> BlogImages { get; set; }
+        public DbSet<AboutImage> AboutImages { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=DESKTOP-M89OB8P;Database=BlogSimpleDb;Trusted_Connection=true");

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Entity.Concrete
 {
-    public class BlogImage:IEntity
+    public class AboutImage:IEntity
     {
         public int Id { get; set; }
-        public string? BlogImageFolder { get; set; }
+        public string? AboutImageFolder { get; set; }
         public DateTime Date { get; set; }
-        public int BlogId  { get; set; }
+        public int AboutId { get; set; }
     }
 }

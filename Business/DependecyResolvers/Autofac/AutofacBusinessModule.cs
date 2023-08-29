@@ -43,6 +43,9 @@ namespace Business.DependecyResolvers.Autofac
             builder.RegisterType<EfBlogImageDal>().As<IBlogImageDal>().SingleInstance();
             builder.RegisterType<FileHeplerManager>().As<IFileHelper>().SingleInstance();
 
+            builder.RegisterType<AboutImageManager>().As<IAboutImageService>().SingleInstance();
+            builder.RegisterType<EfAboutImageDal>().As<IAboutImageDal>().SingleInstance();
+
 
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();

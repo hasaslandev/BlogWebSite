@@ -28,25 +28,17 @@ namespace Business.Concrete
 
         public IResult Add(IFormFile file, BlogImage carImage)
         {
-            IResult result = BusinessRules.Run(CheckForBlogImageLimit(carImage.BlogId));
-            if (result != null)
-            {
-                return result;
-            }
-
             carImage.BlogImageFolder = _fileHelperService.Upload(file, PathConstants.ImagesPath);
             carImage.Date = DateTime.Now;
-
+            carImage.BlogId = 2;
             _carImageDal.AddAsync(carImage);
             return new SuccessResult(Messages.BlogAdded);
-
         }
 
 
         public IResult Delete(BlogImage carImage)
         {
             _fileHelperService.Delete(PathConstants.ImagesPath + carImage.BlogImageFolder);
-
             _carImageDal.DeleteAsync(carImage);
             return new SuccessResult(Messages.AboutDelete);
         }

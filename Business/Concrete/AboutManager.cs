@@ -33,7 +33,7 @@ namespace Business.Concrete
             _categoryService = categoryService;
         }
         //[CasheAspect]Key(Cashe verdiğimiz isim),Value
-        [SecuredOperation("admin,product.add")]
+        //[SecuredOperation("admin,product.add")]
         //[ValidationAspect(typeof(AboutValidator))]
         //[CacheRemoveAspect("IAboutsService.Get")]
         public IResult Add(About about)

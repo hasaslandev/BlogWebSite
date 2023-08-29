@@ -7,20 +7,20 @@ namespace BlogProjesiAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BlogImageController : ControllerBase
+    public class AboutImageController : ControllerBase
     {
-        IBlogImageService _carImageService;
+        IAboutImageService _aboutImageService;
 
-        public BlogImageController(IBlogImageService carImageService)
+        public AboutImageController(IAboutImageService carImageService)
         {
-            _carImageService = carImageService;
+            _aboutImageService = carImageService;
 
         }
 
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _carImageService.GetAll();
+            var result = _aboutImageService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -29,10 +29,9 @@ namespace BlogProjesiAPI.Controllers
         }
 
         [HttpGet("getbyid")]
-
         public IActionResult GetById(int id)
         {
-            var result = _carImageService.GetById(id);
+            var result = _aboutImageService.GetById(id);
             if (result.Success)
             {
                 return Ok(result);
@@ -41,10 +40,9 @@ namespace BlogProjesiAPI.Controllers
         }
 
         [HttpGet("getbycarid")]
-
-        public IActionResult GetByCarId(int CarId)
+        public IActionResult GetByCarId(int AboutId)
         {
-            var result = _carImageService.GetByCarId(CarId);
+            var result = _aboutImageService.GetByAboutId(AboutId);
             if (result.Success)
             {
                 return Ok(result);
@@ -54,10 +52,9 @@ namespace BlogProjesiAPI.Controllers
 
 
         [HttpPost("add")]
-
-        public IActionResult Add([FromForm] IFormFile file, [FromForm] BlogImage carImage)
+        public IActionResult Add([FromForm] IFormFile file, [FromForm] AboutImage aboutImage)
         {
-            var result = _carImageService.Add(file, carImage);
+            var result = _aboutImageService.Add(file, aboutImage);
             if (result.Success)
             {
                 return Ok(result);
@@ -67,10 +64,9 @@ namespace BlogProjesiAPI.Controllers
 
 
         [HttpPost("update")]
-
-        public IActionResult Update([FromForm] IFormFile file, [FromForm] BlogImage carImage)
+        public IActionResult Update([FromForm] IFormFile file, [FromForm] AboutImage aboutImage)
         {
-            var result = _carImageService.Update(file, carImage);
+            var result = _aboutImageService.Update(file, aboutImage);
             if (result.Success)
             {
                 return Ok(result);
@@ -80,10 +76,9 @@ namespace BlogProjesiAPI.Controllers
 
 
         [HttpPost("delete")]
-
-        public IActionResult Delete(BlogImage carImage)
+        public IActionResult Delete(AboutImage aboutImage)
         {
-            var result = _carImageService.Delete(carImage);
+            var result = _aboutImageService.Delete(aboutImage);
             if (result.Success)
             {
                 return Ok(result);
