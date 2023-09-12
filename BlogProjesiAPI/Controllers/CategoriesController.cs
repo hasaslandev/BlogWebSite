@@ -37,6 +37,16 @@ namespace BlogProjesiAPI.Controllers
             return BadRequest(result);
         
         }
+        [HttpGet("getbyid")]
+        public IActionResult GetBlogById(int categoryId)
+        {
+            var result = _categoryService.GetById(categoryId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
 
     }
 }

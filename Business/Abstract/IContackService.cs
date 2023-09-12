@@ -16,5 +16,6 @@ namespace Business.Abstract
 
         IDataResult<List<Contact>> GetAll();
         IDataResult<Contact> GetContactDetails(int id);
+        IResult SendEmail(Contact request);
     }
 }

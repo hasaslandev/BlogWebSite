@@ -80,7 +80,7 @@ namespace Business.Concrete
         [CacheAspect]//Key(Cashe verdiğimiz isim),Value
         public IDataResult<List<About>> GetAll()
         {
-            if (DateTime.Now.Hour == 1)
+            if (DateTime.Now.Hour == 5)
             {
                 return new ErrorDataResult<List<About>>(Messages.MaintenanceTime);
             }

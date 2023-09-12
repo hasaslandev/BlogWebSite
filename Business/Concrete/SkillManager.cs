@@ -50,7 +50,6 @@ namespace Business.Concrete
 
             updateIsSkill.SkillName = skill.SkillName;
             updateIsSkill.SkillRating = skill.SkillRating;
-            updateIsSkill.AdminID = skill.AdminID;
             _skillDal.UpdateAsync(updateIsSkill);
             return new SuccessResult(Messages.CommentUpdate);
 

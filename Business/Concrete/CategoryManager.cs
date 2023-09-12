@@ -46,6 +46,11 @@ namespace Business.Concrete
             }
         }
 
+        public IDataResult<Category> GetById(int id)
+        {
+           return new SuccessDataResult<Category>(_categoryDal.Get(x=>x.CategoryID==id));
+        }
+
         public IResult Update(Category category)
         {
             Category updateIsCategory = _categoryDal.Find(x => x.CategoryID == category.CategoryID);

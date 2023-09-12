@@ -46,6 +46,13 @@ namespace Business.DependecyResolvers.Autofac
             builder.RegisterType<AboutImageManager>().As<IAboutImageService>().SingleInstance();
             builder.RegisterType<EfAboutImageDal>().As<IAboutImageDal>().SingleInstance();
 
+            builder.RegisterType<SkillManager>().As<ISkillService>().SingleInstance();
+            builder.RegisterType<EfSkillDal>().As<ISkillDal>().SingleInstance();
+
+            builder.RegisterType<ContactManager>().As<IContackService>().SingleInstance();
+            builder.RegisterType<EfContactDal>().As<IContactDal>().SingleInstance();
+
+
 
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();

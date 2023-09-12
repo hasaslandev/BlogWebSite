@@ -12,11 +12,12 @@ namespace Entity.Concrete
     {
         [Key]
         public int ContactID { get; set; }
-        public string Name { get; set; }
-        public string SurName { get; set; }
-        public string Mail { get; set; }
-        public string Subject { get; set; }
-        public string Message { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string SurName { get; set; } = string.Empty;
+        public string MailTo { get; set; } = string.Empty;
+        public string Mail { get; set; } = string.Empty;
+        public string Subject { get; set; } = string.Empty;
+        public string Message { get; set; } = string.Empty;
         public DateTime MessageDate { get; set; }
 
     }

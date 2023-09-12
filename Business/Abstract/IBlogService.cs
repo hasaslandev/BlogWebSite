@@ -20,5 +20,9 @@ namespace Business.Abstract
 
         IDataResult<Blog> GetById(int blogId);
         IResult Add(Blog blog);
+
+        IDataResult<List<Blog>> TopTreePost();
+        IDataResult<List<Blog>> TopFivePost();
+
     }
 }

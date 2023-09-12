@@ -46,5 +46,35 @@ namespace BlogProjesiAPI.Controllers
             }
             return BadRequest(result);
         }
+        [HttpGet("getblogbyid")]
+        public IActionResult GetBlogById(int blogId)
+        {
+            var result = _blogService.GetBlogById(blogId);
+            if (result.Success)
+            {
+                return Ok(result);//result. konusuna biraz bak
+            }
+            return BadRequest(result);
+        }
+        [HttpGet("TopTreePost")]
+        public IActionResult TopTreePost()
+        {
+            var result = _blogService.TopTreePost();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpGet("TopFivePost")]
+        public IActionResult TopFivePost()
+        {
+            var result = _blogService.TopFivePost();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
     }
 }

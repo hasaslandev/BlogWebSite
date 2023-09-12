@@ -88,5 +88,15 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CommentUpdate);
 
         }
+
+        public IDataResult<List<Blog>> TopTreePost()
+        {
+            return new SuccessDataResult<List<Blog>>(_repoblog.GetAll().OrderByDescending(x => x.BlogRating).Take(3).ToList());
+        }
+
+        public IDataResult<List<Blog>> TopFivePost()
+        {
+            return new SuccessDataResult<List<Blog>>(_repoblog.GetAll().OrderByDescending(x => x.BlogRating).Take(5).ToList());
+        }
     }
 }
