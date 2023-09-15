@@ -1,4 +1,5 @@
-﻿using CoreL.Entities.Concrete;
+﻿using CoreL.Concrete;
+using CoreL.Entities.Concrete;
 using Entity.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -32,6 +33,9 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<AdminOperationClaim> AdminOperationClaims { get; set; }
         public DbSet<BlogImage> BlogImages { get; set; }
         public DbSet<AboutImage> AboutImages { get; set; }
+        public DbSet<RegisteredVisitor> RegisteredVisitors { get; set; }
+        public DbSet<RegisteredVisitorOperationClaim> RegisteredVisitorOperationClaims { get; set; }
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=DESKTOP-M89OB8P;Database=BlogSimpleDb;Trusted_Connection=true");

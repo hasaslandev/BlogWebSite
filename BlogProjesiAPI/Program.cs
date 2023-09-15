@@ -8,7 +8,6 @@ using CoreL.DataAccess;
 using CoreL.DataAccess.EntityFramework;
 using CoreL.DependencyResolvers;
 using CoreL.Extensions;
-using CoreL.UnitOfWorks;
 using CoreL.Utilities.IoC;
 using CoreL.Utilities.Security.Encyrption;
 using CoreL.Utilities.Security.JWT;
@@ -62,6 +61,8 @@ namespace BlogProjesiAPI
                         IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
                     };
                 });
+
+
             builder.Services.AddDependencyResolvers(new ICoreModule[] //ister array yap ister params yap ister koleksiyon olaray yap
             {
                 new CoreModule()

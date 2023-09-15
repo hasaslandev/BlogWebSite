@@ -4,6 +4,7 @@ using Business.Abstract;
 using Business.CCS;
 using Business.Concrete;
 using Castle.DynamicProxy;
+using CoreL.Concrete;
 using CoreL.Utilities.Helpers.FileHelper;
 using CoreL.Utilities.Interceptors;
 using CoreL.Utilities.Security.JWT;
@@ -51,6 +52,11 @@ namespace Business.DependecyResolvers.Autofac
 
             builder.RegisterType<ContactManager>().As<IContackService>().SingleInstance();
             builder.RegisterType<EfContactDal>().As<IContactDal>().SingleInstance();
+
+            builder.RegisterType<RegisteredVisitorManager>().As<IRegisteredVisitorService>().SingleInstance();
+            builder.RegisterType<EfRegisteredVisitorDal>().As<IRegisteredVisitorDal>().SingleInstance();
+            builder.RegisterType<AuthRegisteredVisitorManager>().As<IAuthRegisteredVisitorService>();
+            builder.RegisterType<RVisitorsJwtHelper>().As<IRVisitorsTokenHelper>();
 
 
 
